@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: request-app
+  labels:
+    app.kubernetes.io/name: request-app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: request-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: request-app
+    spec:
+      containers:
+        - name: request-app
+          image: docker.io/piotr439/requests:latest
+
